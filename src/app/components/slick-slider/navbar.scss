@@ -1,5 +1,7 @@
 .slider-wrap {
-  max-height: 100%;
+  position: relative;
+  //float: left;
+  width: 100%;
   img {
     vertical-align: top;
     background-size:cover;
@@ -8,11 +10,8 @@
 @charset "UTF-8";
 
 // Default Variables
-$slick-arrow-color: white !default;
 $slick-dot-color: white !default;
 $slick-dot-color-active: $pink !default;
-$slick-prev-character: "←" !default;
-$slick-next-character: "→" !default;
 $slick-dot-character: "•" !default;
 $slick-dot-size: 70px !default;
 $slick-opacity-default: 1 !default;
@@ -21,39 +20,9 @@ $slick-opacity-not-active: 1 !default;
 
 .slick-slide{
   float: left;
+  height:100%;
+  min-height: 1px;
 }
-
-/* Arrows */
-
-.slick-prev,
-.slick-next {
-  position: absolute;
-  display: block;
-  height: 20px;
-  width: 20px;
-  line-height: 0px;
-  font-size: 0px;
-  cursor: pointer;
-  background: transparent;
-  color: transparent;
-  top: 50%;
-  margin-top: -10px;
-  padding: 0;
-  border: none;
-  outline: none;
-  &:hover, &:focus {
-    outline: none;
-    background: transparent;
-    color: transparent;
-    &:before {
-      opacity: $slick-opacity-on-hover;
-    }
-  }
-  &.slick-disabled:before {
-    opacity: $slick-opacity-not-active;
-  }
-}
-
 
 /* Dots */
 
@@ -64,7 +33,18 @@ $slick-opacity-not-active: 1 !default;
   margin: 0;
   padding: 0;
   max-height: 100%;
-  border-bottom:4px solid $pink;
+  border-bottom:5px solid $red;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-touch-action: none;
+  touch-action: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .slick-dots {
@@ -125,3 +105,32 @@ $slick-opacity-not-active: 1 !default;
   }
 }
 
+.slick-list {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0;
+  height:100%;
+}
+
+.slick-track {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block;
+  zoom: 1;
+  height:100%;
+}
+.slick-slider .slick-list, .slick-track, .slick-slide, .slick-slide img {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+#main-gallery .slick-slide {
+  -moz-background-size: cover;
+  background-size: cover;
+  background-position: center;
+}

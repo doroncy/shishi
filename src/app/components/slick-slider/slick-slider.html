@@ -1,6 +1,5 @@
-<div>
-  <div ng-repeat="sliderImg in slickSliderCtrl.images">
-    <img ng-src="{{sliderImg.path}}" alt="{{sliderImg.title}}">
-    </img>
+<div id="main-gallery" class="full-size">
+  <div ng-repeat="sliderImg in slickSliderCtrl.images track by $index"
+       ng-class="sliderImg">
   </div>
 </div>

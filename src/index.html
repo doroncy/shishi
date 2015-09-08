@@ -3,9 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>shishi</title>
-    <meta name="description" content="">
+    <meta name="description" content="שי-שי הוא בגדול רול - רול ממש גדול ובריא מבחוץ עלה אורז ואורז ובפנים דגים/ עוף / טופו / ירקות וגם פירות טריים עם רטבים מיוחדים.">
+    <meta name="keywords" content="shishi, shi-shi, שישי, רול">
     <meta name="viewport" content="width=device-width">
     <base href="/">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600italic,700italic' rel='stylesheet' type='text/css'>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
@@ -25,7 +27,7 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div ng-view class="full-height"></div>
+    <div ng-view ng-cloak=""></div>
 
     <!-- build:js(src) scripts/vendor.js -->
     <!-- bower:js -->
@@ -44,5 +46,6 @@
     <!-- endbuild -->
 
     <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js"></script>
+
   </body>
 </html>

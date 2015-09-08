@@ -1,11 +1,147 @@
-<div class="container full-height">
-
-  <section class="slider-wrap">
-    <slick-slider images="mainCtrl.sliderImages">
-    </slick-slider>
+<div class="full-size">
+  <!--Desktop Top Bar Section-->
+  <section class="show-for-medium-up">
+    <div class="abs-top-icons shishi-logo" ng-class="mainCtrl.logoColor"></div>
+    <a class="icon abs-top-icons tavili-style" ng-class="mainCtrl.getColorIcon('icon-tavili-soon')"></a>
+    <a href="https://www.facebook.com/pages/Shi-Shi-Talk-Roll/602288033237270" target="_blank"
+       class="icon abs-top-icons fb-style"
+       ng-class="mainCtrl.getColorIcon('icon-facebook')">
+    </a>
+    <a href="https://instagram.com/shishitlv/" target="_blank" class="icon abs-top-icons instagram-style"
+       ng-class="mainCtrl.getColorIcon('icon-instagram')">
+    </a>
+    <div class="icon abs-top-icons tavili-text-style"
+         ng-if="mainCtrl.showTaviliAlert"
+         ng-class="mainCtrl.getColorIcon('icon-tavili-text')"></div>
   </section>
 
-  <section class="about-section">
-    text here
+  <!--Mobile Top Bar-->
+  <section>
+    <nav class="mobile-top-bar fixed show-for-small-only">
+      <div class="mobile-top-bar-header">
+        <div class="icon icon-shishi-logo-mobile left"></div>
+        <div class="icon icon-hamb right" ng-click="mainCtrl.showTopBarSection = !mainCtrl.showTopBarSection"></div>
+      </div>
+      <section class="mobile-top-bar-section" ng-if="mainCtrl.showTopBarSection">
+        <ul class="text-center">
+          <li ng-repeat="section in mainCtrl.sections">
+            <a href="#"
+               scroll-to="{{::section.id}}"
+               duration="800"
+               easing="easeOutQuint"
+               offset="50"
+               callback-before="mainCtrl.closeMobileTopBar()">
+              {{::section.name}}
+            </a>
+          </li>
+          <li><a href="#" class="white-color">משלוחים בקרוב</a></li>
+          <li>
+            <a href="https://www.facebook.com/pages/Shi-Shi-Talk-Roll/602288033237270" target="_blank">
+              <div class="icon social-icon-size icon-facebook-white"></div>
+            </a>
+          </li>
+          <li>
+            <a href="https://instagram.com/shishitlv/" target="_blank">
+              <div class="icon social-icon-size icon-instagram-white"></div>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </nav>
   </section>
+
+  <!--Image Gallery Section-->
+  <section id="main-gallery-wrap" class="slider-wrap">
+    <slick-slider images="mainCtrl.sliderImages"></slick-slider>
+    <div class="contact-title-top-wrap">
+      <div class="contact-title-top">
+        אבן גבירול 33 (פינת הנביאים), תל אביב. |
+        <a href="tel:03-575-3737" class="phone-link">03-575-3737</a>
+      </div>
+    </div>
+  </section>
+
+  <!--About Shishi Section-->
+  <section id="about-section" class="section about-section shishi-bg" dir="rtl">
+    <div class="row">
+      <div class="small-12 medium-6 large-5 small-centered columns text-center">
+
+        <p class="medium-text">
+          <span class="en-font-regular">Shi-Shi</span>&nbsp;הוא <b>האוכֵל</b>רְחוב החדש בעיר. המציאה אותו שגית (רק אחרי שהכירה את ג'ו). שִי-שִי הוא בגדול <b>רול</b> - רול, ממש גדול, ומאוד בריא, שעושה לך זמן טוב.מבחוץ, אורז ומבפנים, כל טוב טרי של: דגים / עוף / טוֹפוּ / ירקות עם רטבים מצוינים. ולא פחות חשוב - בלי אצות כי זה לא סושי.
+        </p>
+        <p class="medium-text">
+         יחד איתו יש גם <b>ג'וֹ אוקָדַה</b> על צ'אָפָטי הודי, וגם Bowl אסיאתי על אטריות זכוכית משעועית. ויש משוּ מתוק לכתוב עליו הביתה משוקולד. ושתיה תוססת וטרייה עם לימון וליצ'י למשל.
+        </p>
+        <div class="large-text en-font-semi-bold-italic">
+          Tavi li shi shi
+        </div>
+        <img src="app/assets/images/gif-faces.gif" alt="shishi faces" class="shishi-faces"/>
+      </div>
+    </div>
+  </section>
+
+  <!--What is Shishi Section-->
+  <section id="whatis-section" class="section whatis-section red-bg white-color" dir="rtl">
+    <div class="row">
+      <div class="small-12 medium-8 small-centered columns text-center">
+        <p class="large-para">
+          שי-שי הוא בגדול רול - רול ממש גדול ובריא מבחוץ עלה אורז ואורז ובפנים דגים/ עוף / טופו / ירקות וגם פירות טריים עם רטבים מיוחדים.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!--Menu Section-->
+  <section id="menu-section" class="section menu-section shishi-bg" dir="rtl">
+    <h3 class="red-color text-center section-title">תפריט</h3>
+    <div class="row margin-top-lg">
+      <div class="small-centered">
+        <ul class="small-block-grid-1 large-block-grid-3 text-center">
+          <li ng-repeat="menuItem in mainCtrl.menu.mainItems">
+            <div class="menu-item-card">
+              <div class="icon" ng-class="mainCtrl.getMenuItemIcon(menuItem)"></div>
+              <div class="menu-title en-font-bold-italic">{{::menuItem.title}}</div>
+              <p class="menu-description">{{::menuItem.description}}</p>
+            </div>
+          </li>
+        </ul>
+        <ul class="small-block-grid-1 medium-block-grid-2 text-center">
+          <li ng-repeat="dessertItem in mainCtrl.menu.dessertsItems">
+            <div class="menu-dessert-item-card white-color">
+              <div class="menu-title en-font-bold-italic">{{::dessertItem.title}}</div>
+              <p class="menu-description">{{::dessertItem.description}}</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <img src="app/assets/images/gif-faces.gif" alt="shishi faces" class="menu-anim-gif"/>
+  </section>
+
+  <!--Map Section-->
+  <section id="map-section" class="map-section" dir="rtl">
+    <div class="map-title">
+      אבן גבירול 33 (פינת הנביאים), תל אביב. |
+      <a href="tel:03-575-3737" class="phone-link">03-575-3737</a>
+    </div>
+
+    <ui-gmap-google-map center='mainCtrl.map.center' zoom='mainCtrl.map.zoom' options="mainCtrl.map.options">
+      <ui-gmap-marker
+        idKey='1'
+        coords='mainCtrl.map.center'
+        options='mainCtrl.map.markerOptions'>
+      </ui-gmap-marker>
+    </ui-gmap-google-map>
+
+  </section>
+
+  <div class="footer en-font-regular text-center clearfix">
+    <div class="copyright">
+      Copyright © 2014 All Rights Reserved.
+    </div>
+    <div class="powered-by">
+      Designed by <a href="http://studio-y-o.com/" target="_blank">STUDIO Y&O</a> | Dev By <a href="https://github.com/doroncy" target="_blank">Doron Cyngiser</a>
+    </div>
+  </div>
+
 </div>

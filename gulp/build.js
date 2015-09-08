@@ -3,6 +3,7 @@
 var path = require('path');
 var gulp = require('gulp');
 var conf = require('./conf');
+var gulpSequence = require('gulp-sequence');
 
 var $ = require('gulp-load-plugins')({
   pattern: ['gulp-*', 'main-bower-files', 'uglify-save-license', 'del']
@@ -32,6 +33,7 @@ gulp.task('html', ['inject', 'partials'], function () {
     ignorePath: path.join(conf.paths.tmp, '/partials'),
     addRootSlash: false
   };
+
 
   var htmlFilter = $.filter('*.html');
   var jsFilter = $.filter('**/*.js');
@@ -86,8 +88,16 @@ gulp.task('other', function () {
     .pipe(gulp.dest(path.join(conf.paths.dist, '/')));
 });
 
-gulp.task('clean', function (done) {
-  $.del([path.join(conf.paths.dist, '/'), path.join(conf.paths.tmp, '/')], done);
+gulp.task('iconify', function() {
+  $.iconify({
+    src: path.join(conf.paths.src, '/app/assets/images/icons/*.svg'),
+    pngOutput: path.join(conf.paths.src, '/app/assets/images/pngicons'),
+    scssOutput: path.join(conf.paths.src, '/app')
+  });
 });
 
-gulp.task('build', ['html', 'fonts', 'other']);
+gulp.task('clean', function (done) {
+  $.del([path.join(conf.paths.dist, '/'), path.join(conf.paths.tmp, '/'),  path.join(conf.paths.src, '/app/assets/images/pngicons/'),  path.join(conf.paths.src, '/app/icons*.scss')], done);
+});
+
+gulp.task('build', gulpSequence('clean', 'iconify', 'html', 'fonts', 'other'));

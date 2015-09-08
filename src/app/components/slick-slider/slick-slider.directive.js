@@ -13,7 +13,7 @@
       scope: {
         images: '='
       },
-      templateUrl: '/app/components/slick-slider/slick-slider.html',
+      templateUrl: 'app/components/slick-slider/slick-slider.html',
       controller: slickSliderCtrl,
       controllerAs: 'slickSliderCtrl',
       bindToController: true
@@ -22,24 +22,38 @@
     return directive;
 
     /** @ngInject */
-    function slickSliderCtrl($timeout, $element) {
+    function slickSliderCtrl($timeout, $element, $window) {
       var vm = this;
+      var sliderParent = $element.parents('#main-gallery-wrap');
 
-      $timeout(function() {
-        $element.slick({
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows: false,
-          autoplay: true,
-          //adaptiveHeight: false,
-          //mobileFirst: true,
-          dots: true,
-          infinite: true,
-          autoplaySpeed: 10000,
-          speed: 500,
-          fade: true,
-          pauseOnDotsHover: true,
+      init();
+
+      function init() {
+        setViewport();
+        $timeout(function() {
+          $element.slick({
+            draggable: false,
+            touchMove: true,
+            dots:true,
+            arrows:false,
+            speed:2000,
+            fade:true,
+            cssEase:'ease-in-out',
+            autoplay:true,
+            autoplaySpeed:2000,
+            infinite:true
+          });
         });
+      }
+
+      function setViewport() {
+        sliderParent.css({
+          height: $(window).height() + 'px'
+        });
+      }
+
+      $(window).resizeend(function() {
+        setViewport();
       });
     }
   }

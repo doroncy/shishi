@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="45px" height="45px" viewBox="0 0 45 45" style="enable-background:new 0 0 45 45;" xml:space="preserve">
+<style type="text/css">
+<![CDATA[
+	.st0{fill:none;stroke:#EC0044;stroke-miterlimit:10;}
+	
+		.st1{clip-path:url(#SVGID_6_);fill:none;stroke:#FFFFFF;stroke-width:0.8633;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st2{clip-path:url(#SVGID_10_);fill:#EC0044;}
+	.st3{fill:#EC0044;}
+	
+		.st4{clip-path:url(#SVGID_4_);fill:none;stroke:#FFFFFF;stroke-width:0.8632;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st5{clip-path:url(#SVGID_2_);fill:#EC0044;}
+	
+		.st6{clip-path:url(#SVGID_2_);fill:none;stroke:#FFFFFF;stroke-width:0.8633;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st7{fill:none;stroke:#3FBFBB;stroke-miterlimit:10;}
+	.st8{opacity:0.3;clip-path:url(#SVGID_12_);}
+	
+		.st9{clip-path:url(#SVGID_6_);fill:none;stroke:#FFFFFF;stroke-width:0.7891;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st10{clip-path:url(#SVGID_4_);fill:#EC0044;}
+	.st11{opacity:0.5;}
+	.st12{fill:#FFFFFF;}
+	.st13{clip-path:url(#SVGID_6_);fill:#EC0044;}
+	
+		.st14{clip-path:url(#SVGID_10_);fill:none;stroke:#FFFFFF;stroke-width:0.8633;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st15{clip-path:url(#SVGID_8_);fill:#EC0044;}
+	
+		.st16{clip-path:url(#SVGID_8_);fill:none;stroke:#FFFFFF;stroke-width:0.8633;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+]]>
+</style>
+<g>
+	<defs>
+		<rect id="SVGID_1_" x="1.5" y="1.5" width="42" height="42"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+	</clipPath>
+	<path class="st5" d="M43.5,22.5c0,11.598-9.402,21-21,21s-21-9.402-21-21s9.402-21,21-21S43.5,10.902,43.5,22.5"/>
+	<circle class="st6" cx="22.5" cy="22.5" r="18.361"/>
+	<path class="st6" d="M28.014,11.926l-9.575,9.51 M31.363,11.215l-9.573,9.508 M11.521,20.119c0,0-0.841,12.822,10.986,13.666
+		 M22.494,33.785C34.319,32.941,33.48,20.119,33.48,20.119 M33.424,22.189c0,1.527-4.896,2.768-10.935,2.768
+		c-6.04,0-10.936-1.24-10.936-2.768 M33.48,20.119c0,1.527-4.919,2.768-10.986,2.768c-6.069,0-10.988-1.24-10.988-2.768
+		c0-1.529,4.919-2.77,10.988-2.77C28.562,17.35,33.48,18.59,33.48,20.119z"/>
+</g>
+</svg>

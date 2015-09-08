@@ -1,9 +1,14 @@
-/* global malarkey:false, toastr:false, moment:false */
 (function() {
   'use strict';
 
   angular
     .module('shishi')
-    .constant('temp', '')
+    .constant('MenuItemsTypes', {
+      FISH: 'fish',
+      SHRIMP: 'shrimp',
+      VEGGIE: 'veggie',
+      CHICKEN: 'chicken',
+      BOWL: 'bowl'
+    });
 
 })();
