@@ -8,7 +8,8 @@ $topbar-bg-color: #5AADBB;
  *  The import of foundation is made manually because there is still no links of the
  *  sass version in their bower.json...
  */
-@import '../../bower_components/foundation/scss/foundation';
+ @import '../../bower_components/foundation-sites/scss/foundation';
+ @include foundation-everything;
 
 @import './mixins';
 /**
@@ -63,7 +64,7 @@ html, body
   color:white;
 }
 .red-color {
-  color: $red;
+  color: $red !important;
 }
 .margin-top-lg {
   margin-top:50px;
@@ -82,6 +83,9 @@ html, body
   font-family: $en-font;
   font-weight: 700;
   font-style: italic;
+}
+a, a:hover {
+  color:white;
 }
 
 /**

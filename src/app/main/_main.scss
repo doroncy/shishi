@@ -1,6 +1,9 @@
 .gallery-1 {
   background-image: url("/app/assets/images/gallery/gallery1.jpg");
 }
+.gallery-9 {
+  background-image: url("/app/assets/images/gallery/catering_gallery1.jpg");
+}
 .gallery-2 {
   background-image: url("/app/assets/images/gallery/gallery2.jpg");
 }
@@ -12,6 +15,31 @@
 }
 .gallery-5 {
   background-image: url("/app/assets/images/gallery/gallery5.jpg");
+}
+.gallery-6 {
+  background-image: url("/app/assets/images/gallery/gallery6.jpg");
+}
+.gallery-7 {
+  background-image: url("/app/assets/images/gallery/gallery7.jpg");
+}
+.gallery-8 {
+  background-image: url("/app/assets/images/gallery/gallery8.jpg");
+}
+.catering-gallery1{
+  background-image: url("/app/assets/images/gallery/catering_gallery1.jpg");
+}
+.catering-gallery2{
+  background-image: url("/app/assets/images/gallery/catering_gallery2.jpg");
+}
+.catering-gallery3{
+  background-image: url("/app/assets/images/gallery/catering_gallery3.jpg");
+}
+.catering-gallery4{
+  background-image: url("/app/assets/images/gallery/catering_gallery4.jpg");
+}
+
+.review-item {
+  margin-bottom: 40px;
 }
 .section {
   position: relative;
@@ -33,6 +61,7 @@
   z-index:9999999;
   backface-visibility: hidden;
 }
+
 .shishi-logo {
   width:125px;
   height: 131px;
@@ -46,13 +75,33 @@
   }
 }
 .tavili-style{
-  right: 80px;
+  right: 110px;
   height: 105px;
   width: 105px;
+  &:hover {
+    opacity: 0.6;
+  }
+}
+.catering-icon{
+  right: 230px;
+  height: 105px;
+  width: 105px;
+  &:hover {
+    opacity: 0.6;
+  }
+}
+.en-menu-style {
+  right: 60px;
+  top: 105px;
+  height: 25px;
+  width: 25px;
+  &:hover {
+    opacity: 0.6;
+  }
 }
 .fb-style {
-  right: 40px;
-  top: 50px;
+  right: 60px;
+  top: 30px;
   height: 25px;
   width: 25px;
   &:hover {
@@ -60,10 +109,10 @@
   }
 }
 .instagram-style {
-  right: 40px;
+  right: 60px;
   height: 25px;
   width: 25px;
-  top: 90px;
+  top: 65px;
   &:hover {
     opacity: 0.6;
   }
@@ -74,7 +123,7 @@
   animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear; /* Chrome, Safari, Opera */
   animation-timing-function: linear;
-  right: 90px;
+  right: 120px;
   height: 105px;
   width: 77px;
 
@@ -134,6 +183,14 @@ p.large-para {
     left: 50%;
   }
 }
+.menu-item-card-single {
+
+  @media #{$medium-up} {
+    height: 170px;
+    padding-right: 100px;
+    padding-left: 100px;
+  }
+}
 .menu-title {
   font-size:1.4em;
   font-weight: bold;
@@ -166,13 +223,16 @@ p.large-para {
   position: relative;
   margin-bottom: 0;
   padding-bottom: 100px;
+  li {
+    margin-top: 6px;
+  }
 }
 .map-section {
   z-index: 999999;
   position: relative;
 }
 .map-title {
-  background-color: $turkiz;
+  background-color: $red;
   padding: 10px 20px;
   color: white;
   font-size: 1.2em;
@@ -205,8 +265,7 @@ p.large-para {
   }
   @media #{$small-only} {
     padding-left: 10px;
-    padding-right: 10px;
-    //font-size: 10px;
+    padding-right: 10px;    
   }
   @media #{$medium-up} {
     .copyright {
@@ -242,6 +301,10 @@ p.large-para {
       height: 120px;
     }
   }
+}
+
+.half-size {
+  height: 50%;
 }
 
 .whatis-section {
@@ -283,6 +346,10 @@ p.large-para {
 .mobile-top-bar {
   z-index: 999999999;
   backface-visibility: hidden;
+  position: fixed;
+  width: 100%;
+  top:0;
+  left:0;
   .mobile-top-bar-header {
     background-color: $red;
     min-height: 50px;
@@ -332,6 +399,7 @@ p.large-para {
     }
     a {
       color: white;
+      display: inline-block;
     }
   }
 }
@@ -342,7 +410,7 @@ p.large-para {
 }
 .contact-title-top-wrap {
   position: absolute;
-  bottom: 60px;
+  bottom: 40px;
   left: 0;
   right:0;
   z-index: 999999;
@@ -355,4 +423,77 @@ p.large-para {
       font-size: 1em;
     }
   }
+}
+.margin-top-md {
+  margin-top:35px;
+}
+.margin-bottom-20 {
+  margin-bottom:20px;
+}
+.icon-veg_icon1-style {
+  position: absolute !important;
+  right:20px !important;
+  width:77px !important;
+  height:180px !important;
+  opacity: 0.2;
+  @media #{$medium-up} {
+    opacity: 1;
+  }
+}
+.icon-veg_icon2-style {
+  position: absolute !important;
+  left:20px !important;
+  width:89px !important;
+  height:205px !important;
+  margin: 0 !important;
+  opacity: 0.2;
+  @media #{$medium-up} {
+    opacity: 1;
+  }
+}
+.order-mobile {
+  position: fixed;
+  top: 50px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  left: 0;
+  right: 0;
+  z-index: 999999;
+  height: 30px;
+  line-height: 30px;
+  a {
+    color: $red;
+  }
+}
+.padding-top-sm {
+  padding-top: 40px;
+}
+
+.catering { 
+  .catering-section {
+    @media #{$small-only} {
+        .medium-text {
+            font-size: 1.3em;
+        }
+        .large-text {
+            font-size: 2.2em;
+        }
+        .shishi-faces {
+            height: 120px;
+        }
+    }    
+  }
+  @media screen and (min-width: 40em) {
+    h2 {
+      font-size: 2.5rem;
+    }
+  }
+  .bold {
+    font-weight: bold;
+  }
+}
+
+.red, .red:hover {
+  color: $red;
 }

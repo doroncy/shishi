@@ -6,9 +6,10 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($timeout, $location, MenuService) {
+  function MainController($rootScope, $timeout, $location, $window, $anchorScroll, MenuService) {
     var vm = this;
 
+    $anchorScroll('home');
     vm.sections = [
       {id: 'about-section', name: 'אודות'},
       {id: 'whatis-section', name: 'מה זה שישי'},
@@ -24,7 +25,7 @@
 
     $timeout(function() {
       vm.showTaviliAlert = false;
-    },6000);
+    }, 6100);
 
     vm.getColorIcon = function(iconPrefix) {
       return iconPrefix + '-' + vm.logoColor;
@@ -37,17 +38,17 @@
     };
 
     // Slider Gallery
-    vm.sliderImages = ['gallery-1', 'gallery-2', 'gallery-3', 'gallery-4', 'gallery-5'];
+    vm.sliderImages = ['gallery-1', 'gallery-9', 'gallery-2', 'gallery-3', 'gallery-4', 'gallery-5', 'gallery-6', 'gallery-7', 'gallery-8'];
 
     // About Us
-    var aboutSection = $(".about-section");
-    var whatisSection = $(".whatis-section");
-    var menuSection = $(".menu-section");
-
-    $(window).scroll(function() {
-      var aboutSectionOffset = aboutSection.offset().top - $(window).scrollTop();
-      var whatisSectionOffset = whatisSection.offset().top - $(window).scrollTop();
-      var menuSectionOffset = menuSection.offset().top - $(window).scrollTop();
+    var aboutSection = angular.element(".about-section");
+    var whatisSection = angular.element(".whatis-section");
+    var menuSection = angular.element(".menu-section");
+    
+    $window.jQuery($window).scroll(function() {
+      var aboutSectionOffset = aboutSection.offset().top - angular.element($window).scrollTop();
+      var whatisSectionOffset = whatisSection.offset().top - angular.element($window).scrollTop();
+      var menuSectionOffset = menuSection.offset().top - angular.element($window).scrollTop();
 
       var newLogoColor = 'white';
       if (aboutSectionOffset < 160) {
@@ -70,17 +71,7 @@
     // Menu Section
     vm.getMenuItemIcon = function(menuItem) {
       return "icon-" + menuItem.type;
-    };
-
-    // Map Section
-    vm.map = {
-      center: { latitude: 32.0753662, longitude: 34.7816258 },
-      zoom: 17,
-      options: {scrollwheel:false,draggable: false},
-      markerOptions: {
-        icon: 'http://' + $location.host() + ':' + $location.port() + '/app/assets/images/shishi-face.png'
-      }
-    };
+    };    
   }
 
 

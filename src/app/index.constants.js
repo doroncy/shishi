@@ -8,7 +8,8 @@
       SHRIMP: 'shrimp',
       VEGGIE: 'veggie',
       CHICKEN: 'chicken',
-      BOWL: 'bowl'
+      BOWL: 'bowl',
+      SOUP: 'soup'
     });
 
 })();

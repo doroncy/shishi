@@ -22,8 +22,7 @@
     return directive;
 
     /** @ngInject */
-    function slickSliderCtrl($timeout, $element, $window) {
-      var vm = this;
+    function slickSliderCtrl($timeout, $element, $window) {    
       var sliderParent = $element.parents('#main-gallery-wrap');
 
       init();
@@ -48,11 +47,11 @@
 
       function setViewport() {
         sliderParent.css({
-          height: $(window).height() + 'px'
+          height: $window.jQuery($window).height() + 'px'
         });
       }
 
-      $(window).resizeend(function() {
+      $window.jQuery($window).resizeend(function() {
         setViewport();
       });
     }

@@ -2,18 +2,22 @@
   'use strict';
 
   angular
-    .module('shishi', ['ngTouch', 'ngRoute', 'uiGmapgoogle-maps', 'smoothScroll'])
+    .module('shishi', ['ngTouch', 'ngRoute', 'ngMap', 'smoothScroll'])
     .config(config);
 
   /** @ngInject */
-  function config($logProvider, uiGmapGoogleMapApiProvider) {
+  function config($logProvider, $locationProvider) {
+
+    $locationProvider.html5Mode(true);
+
     // Enable log
-    $logProvider.debugEnabled(true);
+    $logProvider.debugEnabled(false);
 
     //Init Google Maps
-    uiGmapGoogleMapApiProvider.configure({
-      israel: true
-    });
+    // uiGmapGoogleMapApiProvider.configure({
+    //   israel: true
+    // });
   }
+
 
 })();

@@ -1,8 +1,13 @@
-<div class="full-size">
+<div id="home" class="full-size">
   <!--Desktop Top Bar Section-->
-  <section class="show-for-medium-up">
+  <section class="hide-for-small-only">
     <div class="abs-top-icons shishi-logo" ng-class="mainCtrl.logoColor"></div>
-    <a class="icon abs-top-icons tavili-style" ng-class="mainCtrl.getColorIcon('icon-tavili-soon')"></a>
+    <a href="/catering"
+       class="icon abs-top-icons catering-icon"
+       ng-class="mainCtrl.getColorIcon('icon-catering')"></a>
+    <a href="/tabit.html" target="_blank"
+       class="icon abs-top-icons tavili-style"
+       ng-class="mainCtrl.getColorIcon('icon-tavili')"></a>
     <a href="https://www.facebook.com/pages/Shi-Shi-Talk-Roll/602288033237270" target="_blank"
        class="icon abs-top-icons fb-style"
        ng-class="mainCtrl.getColorIcon('icon-facebook')">
@@ -10,20 +15,24 @@
     <a href="https://instagram.com/shishitlv/" target="_blank" class="icon abs-top-icons instagram-style"
        ng-class="mainCtrl.getColorIcon('icon-instagram')">
     </a>
+    <a href="http://shi-shi.co.il/shishi-eng-menu.pdf" target="_blank"
+       class="icon abs-top-icons en-menu-style"
+       ng-class="mainCtrl.getColorIcon('icon-en')"></a>       
     <div class="icon abs-top-icons tavili-text-style"
          ng-if="mainCtrl.showTaviliAlert"
          ng-class="mainCtrl.getColorIcon('icon-tavili-text')"></div>
   </section>
 
   <!--Mobile Top Bar-->
-  <section>
+  <section class="show-for-small-only">
     <nav class="mobile-top-bar fixed show-for-small-only">
       <div class="mobile-top-bar-header">
-        <div class="icon icon-shishi-logo-mobile left"></div>
-        <div class="icon icon-hamb right" ng-click="mainCtrl.showTopBarSection = !mainCtrl.showTopBarSection"></div>
+        <div class="icon icon-shishi-logo-mobile float-left"></div>
+        <div class="icon icon-hamb float-right" ng-click="mainCtrl.showTopBarSection = !mainCtrl.showTopBarSection"></div>
       </div>
       <section class="mobile-top-bar-section" ng-if="mainCtrl.showTopBarSection">
         <ul class="text-center">
+          <li><a href="/tabit.html" target="_blank" class="white-color">TA / משלוח</a></li>
           <li ng-repeat="section in mainCtrl.sections">
             <a href="#"
                scroll-to="{{::section.id}}"
@@ -34,20 +43,42 @@
               {{::section.name}}
             </a>
           </li>
-          <li><a href="#" class="white-color">משלוחים בקרוב</a></li>
+          <li>
+            <a href="#" target="_blank">
+              <a href="#"
+                 scroll-to="reviews"
+                 duration="800"
+                 easing="easeOutQuint"
+                 offset="50"
+                 callback-before="mainCtrl.closeMobileTopBar()">
+                כתבו עלינו
+              </a>
+            </a>
+          </li>
+          <li>
+            <a href="/catering">
+              <div class="en-font-regular white">קייטרינג</div>
+            </a>
+          </li>
+          <li>
+            <a href="http://shi-shi.co.il/shishi-eng-menu.pdf" target="_blank">
+              <div class="en-font-regular white">English Menu</div>
+            </a>
+          </li>
           <li>
             <a href="https://www.facebook.com/pages/Shi-Shi-Talk-Roll/602288033237270" target="_blank">
               <div class="icon social-icon-size icon-facebook-white"></div>
             </a>
-          </li>
-          <li>
             <a href="https://instagram.com/shishitlv/" target="_blank">
               <div class="icon social-icon-size icon-instagram-white"></div>
             </a>
-          </li>
+          </li>          
         </ul>
       </section>
     </nav>
+    <div class="order-mobile">
+      <a href="/tabit.html" target="_blank">TA / לחץ למשלוח</a>
+    </div>
   </section>
 
   <!--Image Gallery Section-->
@@ -55,8 +86,8 @@
     <slick-slider images="mainCtrl.sliderImages"></slick-slider>
     <div class="contact-title-top-wrap">
       <div class="contact-title-top">
-        אבן גבירול 33 (פינת הנביאים), תל אביב. |
-        <a href="tel:03-575-3737" class="phone-link">03-575-3737</a>
+        אבן גבירול 33 (פינת הנביאים), תל אביב |
+        <a href="tel:03-575-3737" class="phone-link"> טלפון להזמנות: 03-575-3737</a>
       </div>
     </div>
   </section>
@@ -64,13 +95,10 @@
   <!--About Shishi Section-->
   <section id="about-section" class="section about-section shishi-bg" dir="rtl">
     <div class="row">
-      <div class="small-12 medium-6 large-5 small-centered columns text-center">
+      <div class="small-12 medium-7 large-6 small-centered columns text-center">
 
         <p class="medium-text">
-          <span class="en-font-regular">Shi-Shi</span>&nbsp;הוא <b>האוכֵל</b>רְחוב החדש בעיר. המציאה אותו שגית (רק אחרי שהכירה את ג'ו). שִי-שִי הוא בגדול <b>רול</b> - רול, ממש גדול, ומאוד בריא, שעושה לך זמן טוב.מבחוץ, אורז ומבפנים, כל טוב טרי של: דגים / עוף / טוֹפוּ / ירקות עם רטבים מצוינים. ולא פחות חשוב - בלי אצות כי זה לא סושי.
-        </p>
-        <p class="medium-text">
-         יחד איתו יש גם <b>ג'וֹ אוקָדַה</b> על צ'אָפָטי הודי, וגם Bowl אסיאתי על אטריות זכוכית משעועית. ויש משוּ מתוק לכתוב עליו הביתה משוקולד. ושתיה תוססת וטרייה עם לימון וליצ'י למשל.
+          <span class="en-font-regular">Shi-Shi</span>&nbsp;הוא <b>האוכֵל</b>רְחוב החדש בעיר. יצרה אותו שגית, שעל שמה גם הסלט. שִי-שִי הוא בגדול <b>רול</b> - רול, ממש גדול, ומאוד בריא שעושה זמן טוב. מבחוץ אורז ומבפנים כל טוב טרי של: דגים/ עוף / בקר / טוֹפוּ / ירקות עם רטבים מצוינים, ולא פחות חשוב- בלי אצות כי זה לא סושי. <br/> ויש גם <b> Bowl :</b><br/> <b>Hot Bowl</b> של מרק אודון <br/><b>Cold Bowl </b> של סלט אטריות זכוכית. <br/> . ויש משוּ מתוק לכתוב עליו הביתה משוקולד, ושתיה טרייה עם לימון וליצ'י למשל.
         </p>
         <div class="large-text en-font-semi-bold-italic">
           Tavi li shi shi
@@ -94,10 +122,11 @@
   <!--Menu Section-->
   <section id="menu-section" class="section menu-section shishi-bg" dir="rtl">
     <h3 class="red-color text-center section-title">תפריט</h3>
+    <h2 class="red-color text-center en-font-bold-italic">Shi Shi Roll</h2>
     <div class="row margin-top-lg">
       <div class="small-centered">
-        <ul class="small-block-grid-1 large-block-grid-3 text-center">
-          <li ng-repeat="menuItem in mainCtrl.menu.mainItems">
+        <ul class="row small-up-1 large-up-3 text-center no-bullet" >
+          <li ng-repeat="menuItem in mainCtrl.menu.mainItems" class="column">
             <div class="menu-item-card">
               <div class="icon" ng-class="mainCtrl.getMenuItemIcon(menuItem)"></div>
               <div class="menu-title en-font-bold-italic">{{::menuItem.title}}</div>
@@ -105,34 +134,128 @@
             </div>
           </li>
         </ul>
-        <ul class="small-block-grid-1 medium-block-grid-2 text-center">
-          <li ng-repeat="dessertItem in mainCtrl.menu.dessertsItems">
-            <div class="menu-dessert-item-card white-color">
-              <div class="menu-title en-font-bold-italic">{{::dessertItem.title}}</div>
-              <p class="menu-description">{{::dessertItem.description}}</p>
-            </div>
-          </li>
-        </ul>
+
+        <div class="text-center">
+          <h2 class="red-color text-center en-font-bold-italic">Shi Shi Cold Bowl</h2>
+          <div class="menu-item-card menu-item-card-single margin-top-md">
+            <div class="icon icon-bowl"></div>
+            <div class="menu-title en-font-bold-italic">Salad Cold Bowl</div>
+            <p class="menu-description">סלט איטריות זכוכית משעועית עם חסה ועשבי תיבול, אדממה, מלפפון, מנגו ובוטנים (תוספת סשימי של סלמון / פרוסות חזה עוף בציר אסייתי / קוביות טופו פריכות)</p>
+            <div class="icon icon-veg_icon1 icon-veg_icon1-style"></div>
+            <div class="icon icon-veg_icon2 icon-veg_icon2-style"></div>
+          </div>
+        </div>
+
+        <div class="text-center margin-top-md">
+          <h2 class="red-color text-center en-font-bold-italic">Shi Shi Hot Bowl</h2>
+          <div class="menu-item-card menu-item-card-single margin-top-md">
+            <div class="icon icon-soup"></div>
+            <div class="menu-title en-font-bold-italic">Udon Hot Bowl</div>
+            <p class="menu-description">מרק אודון עם איטריות זכוכית, פיטריות שיטאקה, בצל ירוק, ומלא עלים ירוקים (עם שרימפס פריך / עם פרוסות חזה עוף בציר אסיאתי / עם קוביות טופו פריכות)</p>
+          </div>
+        </div>
+
+        <div class="text-center margin-top-md">
+          <h2 class="red-color text-center en-font-bold-italic">Shi Shi Small Bowl</h2>
+          <div class="menu-item-card menu-item-card-single margin-top-md">
+            <div class="icon icon-soup"></div>   
+            <div class="menu-title en-font-bold-italic"></div>         
+            <p class="menu-description padding-top-sm">סלט פפאיה SHI-SHI STYLE/אגדה של טופו/כרובית מטוגנת באיולי קארי</p>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <h2 class="red-color text-center en-font-bold-italic margin-bottom-20">Desserts</h2>
+          <ul class="row small-up-1 medium-up-2 text-center no-bullet">
+            <li ng-repeat="dessertItem in mainCtrl.menu.dessertsItems" class="column">
+              <div class="menu-dessert-item-card white-color">
+                <div class="menu-title en-font-bold-italic">{{::dessertItem.title}}</div>
+                <p class="menu-description">{{::dessertItem.description}}</p>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
+
+    <!--Reviews Section -->
+    <div class="reviews-wrap" id="reviews">
+      <h2 class="red-color text-center en-font-bold-italic">כתבו עלינו</h2>
+
+      <div class="row review-item">
+        <div class="small-12 medium-10 small-centered columns text-center">
+          <a href="http://www.mako.co.il/food-cooking_magazine/pizza-rules/Article-d04180be70d7151006.htm"
+             target="_blank"
+             class="review-item-text medium-text red-color">
+            "מנת השי־שי כרובית היא מפנתיאון מנות הזלילה הכי מספקות והכי מענגות רגשית בעיר. השי־שי ארוז היטב בנייר אריזה ומונח כמו כלי נגינה יקר בקופסאות קרטון יפות שגורמות לו להגיע מהודק ומחוטב ולא להתפרק בדרך. זו הסיבה שבעטייה ממש נוח לאכול אותו כשממשיכים להקליד ביד אחת ומחזיקים אותו רק ביד השנייה"
+          </a>
+          <div class="en-font-semi-bold-italic">
+            שירי כץ | TIME OUT
+          </div>
+        </div>
+      </div>
+
+      <div class="row review-item">
+        <div class="small-12 medium-10 small-centered columns text-center">
+          <a href="http://timeout.co.il/%D7%90%D7%95%D7%9B%D7%9C%D7%99%D7%9D-%D7%A9%D7%95%D7%AA%D7%99%D7%9D/%D7%91%D7%93%D7%A8%D7%9A-%D7%90%D7%9C%D7%99%D7%9B%D7%9D/%D7%A0%D7%A7%D7%9E%D7%AA%D7%95-%D7%A9%D7%9C-%D7%94%D7%9E%D7%90%D7%A0%D7%A5-%D7%94%D7%90%D7%A1%D7%99%D7%99%D7%AA%D7%99-%D7%9E%D7%94-%D7%97%D7%A9%D7%91%D7%A0%D7%95-%D7%A2%D7%9C-%D7%94%D7%9E%D7%A9"
+             target="_blank"
+             class="review-item-text medium-text red-color">
+            ״מאז שדיווחנו לכם על הפתיחה של שי שי, בית האוכל האסייתי ברחוב אבן גבירול בתל אביב, אנחנו רק הולכים ומתלהבים מהמקום יותר ויותר. אווירה קלילה ואוכל טעים, משביע וצבעוני (אם עוד לא טעמתם, מגישים כאן רול אורז גדול במילויים שונים ומעניינים, ובסגנון שאינו דווקא אסייתי מובהק). עכשיו אנחנו מתלהבים גם ממערכת המשלוחים החדשה של המקום, שמציעה את אחד המארזים המגניבים והאסתטיים ביותר שראינו.״
+          </a>
+          <div class="en-font-semi-bold-italic">
+            ריטה גולדשטיין | אוכל טוב| mako
+          </div>
+        </div>
+      </div>
+
+      <div class="row review-item">
+        <div class="small-12 medium-10 small-centered columns text-center">
+          <a href="http://www.mouse.co.il/CM.articles_item,582,209,79668,.aspx"
+             target="_blank"
+             class="review-item-text medium-text red-color">
+            ״כששומעים לראשונה על הקונספט הקולינרי של SHI SHI, מעין שילוב משונה בין ספרינג-רול לסושי, נדמה שלפנינו עוד מסעדה אסייתית  עם שאיפות גדולות ויכולות קטנות. אלא שאז נותנים ביס אחד ברול ממולא בדג לבן או שרימפס, ומבינים שיש דברים שהיו צריכים להמציא כבר מזמן. אנחנו ממליצים להזמין שני רולים שונים ולהתחלק חצי-חצי עם חברים טובים. בקרוב יהיו גם משלוחים״
+          </a>
+          <div class="en-font-semi-bold-italic">
+            פרסי עכבר העיר – אוכל הרחוב הטוב ביותר
+          </div>
+        </div>
+      </div>
+
+      <div class="row review-item" dir="ltr">
+        <div class="small-12 medium-10 small-centered columns text-center">
+          <a href="http://www.telavivaffordabledining.com/?p=566"
+             target="_blank"
+             class="review-item-text medium-text red-color">
+            "they offer different innovative variations of enlarged sushi. Each dish is based on rice with different filling and sauces that are fresh and will surprise you with their robust flavor So what is this dish? Shi-Shi is an even larger and healthier sushi. The dish itself is based on rice with differ choices of fillings with unique, flavorful sauces. Each large sushi roll is rolled to perfection with no dripping and can be eaten in place or take away."
+          </a>
+          <div class="en-font-semi-bold-italic">
+            Tel Aviv Affordable Dining
+          </div>
+        </div>
+      </div>
+
+    </div>
+
     <img src="app/assets/images/gif-faces.gif" alt="shishi faces" class="menu-anim-gif"/>
   </section>
 
   <!--Map Section-->
   <section id="map-section" class="map-section" dir="rtl">
     <div class="map-title">
-      אבן גבירול 33 (פינת הנביאים), תל אביב. |
+      אבן גבירול 33 (פינת הנביאים), תל אביב |
       <a href="tel:03-575-3737" class="phone-link">03-575-3737</a>
     </div>
 
-    <ui-gmap-google-map center='mainCtrl.map.center' zoom='mainCtrl.map.zoom' options="mainCtrl.map.options">
-      <ui-gmap-marker
-        idKey='1'
-        coords='mainCtrl.map.center'
-        options='mainCtrl.map.markerOptions'>
-      </ui-gmap-marker>
-    </ui-gmap-google-map>
-
+    <div map-lazy-load="https://maps.google.com/maps/api/js">
+      <ng-map center="32.0753662,34.7816258"
+        zoom="17"
+        scrollwheel="false"
+        draggable="false">
+        <marker position="32.0753662,34.7816258"
+                icon="http://www.shi-shi.co.il/app/assets/images/shishi-face.png">
+        </marker>
+      </ng-map>
+    </div>
   </section>
 
   <div class="footer en-font-regular text-center clearfix">

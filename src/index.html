@@ -2,10 +2,14 @@
 <html ng-app="shishi">
   <head>
     <meta charset="utf-8">
-    <title>shishi</title>
-    <meta name="description" content="שי-שי הוא בגדול רול - רול ממש גדול ובריא מבחוץ עלה אורז ואורז ובפנים דגים/ עוף / טופו / ירקות וגם פירות טריים עם רטבים מיוחדים.">
-    <meta name="keywords" content="shishi, shi-shi, שישי, רול">
+    <title>SHI SHI כי זה יותר מרק סושי - משלוחים אבן גבירול תל אביב</title>
+    <meta name="description" content="האתר הרשמי של מסעדת shi shi הממוקמת באבן גבירול תל אביב. לעיון בתפריט שלנו ולטלפון להזמנות משלוחים כנסו לאתר! שי-שי – רול סושי גדול, בריא וללא אצה.">
+    <meta name="keywords" content="שגית לאופר שקד,שי-שי,talk roll,shishi shi-shi,שישי,רול,אוכל רחוב,אבן גבירול,סושי">
     <meta name="viewport" content="width=device-width">
+    <meta name="fragment" content="!" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
     <base href="/">
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600italic,700italic' rel='stylesheet' type='text/css'>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -27,7 +31,17 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div ng-view ng-cloak=""></div>
+    <div class="app-wraper" ng-view cfmtibxakq=""></div>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-69150883-1');
+      ga('send', 'pageview');
+    </script>
 
     <!-- build:js(src) scripts/vendor.js -->
     <!-- bower:js -->
@@ -46,6 +60,53 @@
     <!-- endbuild -->
 
     <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js"></script>
+
+    <!-- Google Code for Remarketing Tag -->
+    <!--------------------------------------------------
+    Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. See more information and instructions on how to setup the tag on: http://google.com/ads/remarketingsetup
+    --------------------------------------------------->
+    <script type="text/javascript">
+      /* <![CDATA[ */
+      var google_conversion_id = 867239845;
+      var google_custom_params = window.google_tag_params;
+      var google_remarketing_only = true;
+      /* ]]> */
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+    </script>
+    <noscript>
+      <div style="display:inline;">
+        <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/867239845/?guid=ON&amp;script=0"/>
+      </div>
+    </noscript>
+
+    <script type="text/javascript">
+      var _mfq = _mfq || [];
+      (function() {
+        var mf = document.createElement("script");
+        mf.type = "text/javascript"; mf.async = true;
+        mf.src = "//cdn.mouseflow.com/projects/09e2c335-29a8-437e-b3d7-54242ac2bb5a.js";
+        document.getElementsByTagName("head")[0].appendChild(mf);
+      })();
+    </script>
+
+    <!-- Facebook Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window,document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '921461007988448');
+      fbq('track', 'PageView');
+    </script>
+    <noscript>
+     <img height="1" width="1" src="https://www.facebook.com/tr?id=921461007988448&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Facebook Pixel Code -->
 
   </body>
 </html>
