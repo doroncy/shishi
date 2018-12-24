@@ -1,0 +1,20 @@
+.catering-bg {  
+    position: relative;
+    background-size: cover;
+    height: 380px;
+    border-bottom: 5px solid #ec0044;
+}
+
+.catering-section {
+    @media #{$small-only} {
+        .medium-text {
+            font-size: 1.3em;
+        }
+        .large-text {
+            font-size: 2.2em;
+        }
+        .shishi-faces {
+            height: 120px;
+        }
+    }
+}
