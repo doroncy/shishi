@@ -67,17 +67,6 @@
       }
     ];
 
-    service.dessertsItems = [
-      {
-        title: "Chocolate",
-        description: "מוס שוקולד חלב עם נוגט ושוקולד קראנצ'י"
-      },
-      {
-        title: "Tropic",
-        description: "שוקולד לבן במיסו קרם פסיפלורה ותותים טריים"
-      }
-    ];
-
     service.coldBowl = [
       {
         title: "Salad Cold Bowl",

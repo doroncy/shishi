@@ -23,6 +23,15 @@
     };
     vm.showTaviliAlert = true;
 
+    if ($location.search()['ricebowl']) {
+      $timeout(function() {
+        var ricebowlSection = angular.element("#ricebowl");
+        $window.jQuery('html, body').animate({
+          scrollTop: ricebowlSection.offset().top
+        }, 1000);
+      }, 500)
+    }
+
     $timeout(function() {
       vm.showTaviliAlert = false;
     }, 6100);
@@ -44,7 +53,7 @@
     var aboutSection = angular.element(".about-section");
     var whatisSection = angular.element(".whatis-section");
     var menuSection = angular.element(".menu-section");
-    
+
     $window.jQuery($window).scroll(function() {
       var aboutSectionOffset = aboutSection.offset().top - angular.element($window).scrollTop();
       var whatisSectionOffset = whatisSection.offset().top - angular.element($window).scrollTop();
@@ -71,7 +80,7 @@
     // Menu Section
     vm.getMenuItemIcon = function(menuItem) {
       return "icon-" + menuItem.type;
-    };    
+    };
   }
 
 
